@@ -25,8 +25,24 @@ public class CustomerService {
 	@Autowired
 	private EmployeeRepository employeeRepository;
 	
-	public List<Customer> findAll(){
-		return customerRepository.findAll();
+	public List<CustomerDTO> findAll(){
+		List<CustomerDTO> list = new ArrayList<CustomerDTO>();
+		int tienhang;
+		int tienlo ;
+		for (Customer customer : customerRepository.findAll()) {
+			try {
+				tienhang = customerRepository.tongtienhang(customer.getId());
+				tienlo = customerRepository.tongtienlo(customer.getId());
+			} catch (Exception e) {
+				// TODO: handle exception
+				tienhang = 0;
+				tienlo = 0;
+			}
+			
+			list.add(customerConvert.mapCustomerEntityToDto(customer,tienhang ,tienlo
+					));
+		}
+		return list;
 	}
 	
 	public Customer findOne(int id) {

@@ -16,4 +16,11 @@ public interface CustomerRepository extends JpaRepository<Customer, Integer> {
 	@Query(value ="SELECT id FROM customers ORDER BY customers.id DESC LIMIT 1",nativeQuery = true)
 	int findIDcus();
 	
+	@Query(value ="SELECT SUM(orderdetails.quantity*orderdetails.price) FROM `orders`,orderdetails WHERE orders.id = orderdetails.idorder AND orders.status = 'Đã hoàn thành' AND orders.idcustomer = ?1",nativeQuery = true)
+	int tongtienhang(int id);
+	
+	
+	
+	@Query(value ="SELECT SUM(orderdetails.quantity*orderdetails.price) FROM `orders`,orderdetails WHERE orders.id = orderdetails.idorder AND orders.status != 'Đã hoàn thành' AND orders.status != 'Đã hủy' AND orders.idcustomer =?1",nativeQuery = true)
+	int tongtienlo(int id);
 }

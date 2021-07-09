@@ -50,6 +50,49 @@ public class OrderService {
 		return orRepository.findorderlast();
 	}
 	
+	public int getTongtienban(int month) {
+		try {
+			return orRepository.tongtienban(month);
+		} catch (Exception e) {
+			// TODO: handle exception
+			return 0;
+		}
+		
+	}
+	public int gettonghoadon(int month) {
+		try {
+			return orRepository.tonghoadon(month);
+		} catch (Exception e) {
+			// TODO: handle exception
+			return 0;
+		}
+	}
+	public int gettongkhachhang(int month) {
+		try {
+			return orRepository.tongkhachhang(month);
+		} catch (Exception e) {
+			// TODO: handle exception
+			return 0;
+		}
+	}
+	
+	public int gettongdonhanghoanthanh(int month) {
+		try {
+			return orRepository.tongdonhanghoanthanh(month);
+		} catch (Exception e) {
+			// TODO: handle exception
+			return 0;
+		}
+	}
+	
+	public int gettongdonhanghuy(int month) {
+		try {
+			return orRepository.tongdonhanghuy(month);
+		} catch (Exception e) {
+			// TODO: handle exception
+			return 0;
+		}
+	}
 	
 	
 }

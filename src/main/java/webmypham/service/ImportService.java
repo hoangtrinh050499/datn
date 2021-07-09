@@ -56,4 +56,16 @@ public class ImportService {
 		return importRipository.findIDImport();
 	}
 	
+	public int getTongtienhang(int month) {
+		
+		try {
+			return importRipository.tongtienhang(month);
+		} catch (Exception e) {
+			return 0;
+		}
+		
+		
+		
+	}
+	
 }

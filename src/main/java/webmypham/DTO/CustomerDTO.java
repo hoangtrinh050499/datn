@@ -12,18 +12,42 @@ public class CustomerDTO {
 	private String phone;
 
 	private String address;
-	public CustomerDTO(int id, String name, String email, String phone, String address) {
+	private int tongtienhang;
+	private int tongtienno;
+	
+	
+	
+	public CustomerDTO(int id, String name, String email, String phone, String address, int tongtienhang,
+			int tongtienno) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.email = email;
 		this.phone = phone;
 		this.address = address;
+		this.tongtienhang = tongtienhang;
+		this.tongtienno = tongtienno;
 	}
-	
+
 	public CustomerDTO() {
 		super();
 		// TODO Auto-generated constructor stub
+	}
+
+	public int getTongtienhang() {
+		return tongtienhang;
+	}
+
+	public void setTongtienhang(int tongtienhang) {
+		this.tongtienhang = tongtienhang;
+	}
+
+	public int getTongtienno() {
+		return tongtienno;
+	}
+
+	public void setTongtienno(int tongtienno) {
+		this.tongtienno = tongtienno;
 	}
 
 	public int getId() {

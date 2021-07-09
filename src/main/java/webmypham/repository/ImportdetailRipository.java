@@ -30,16 +30,16 @@ public interface ImportdetailRipository extends JpaRepository<Importdetail, Inte
 	Integer findprice(int pro);
 	
 	
-//	@Query(value="SELECT id,idbill,idproduct,nsx,exp,quantityimport,unitpriceimport,quantitysell,MAX(unitpricesell) as unitpricesell FROM importdetail WHERE unitpricesell>250000 GROUP BY idproduct ;", nativeQuery = true)
-//	List<Importdetail> findcaocap();
+	@Query(value="SELECT id,idbill,idproduct,nsx,exp,quantityimport,unitpriceimport,quantitysell,MAX(unitpricesell) as unitpricesell FROM importdetail WHERE unitpricesell>250000 GROUP BY idproduct ;", nativeQuery = true)
+	List<Importdetail> findcaocap();
 //	
 	
-	@Query(value="SELECT ANY_VALUE(rw.id) as id,ANY_VALUE(rw.idproduct) as idproduct,ANY_VALUE(rw.idbill) as idbill,ANY_VALUE(rw.nsx) as nsx\r\n" + 
-			",ANY_VALUE(rw.exp) as exp,ANY_VALUE(rw.quantityimport) as quantityimport,\r\n" + 
-			"ANY_VALUE(rw.unitpriceimport) as unitpriceimport,ANY_VALUE(rw.quantitysell) as quantitysell,\r\n" + 
-			"MAX(rw.unitpricesell) as unitpricesell FROM importdetail as rw where unitpricesell > 250000\r\n" + 
-			"group by idproduct;", nativeQuery = true)
-	List<Importdetail> findcaocap();
+//	@Query(value="SELECT ANY_VALUE(rw.id) as id,ANY_VALUE(rw.idproduct) as idproduct,ANY_VALUE(rw.idbill) as idbill,ANY_VALUE(rw.nsx) as nsx\r\n" + 
+//			",ANY_VALUE(rw.exp) as exp,ANY_VALUE(rw.quantityimport) as quantityimport,\r\n" + 
+//			"ANY_VALUE(rw.unitpriceimport) as unitpriceimport,ANY_VALUE(rw.quantitysell) as quantitysell,\r\n" + 
+//			"MAX(rw.unitpricesell) as unitpricesell FROM importdetail as rw where unitpricesell > 250000\r\n" + 
+//			"group by idproduct;", nativeQuery = true)
+//	List<Importdetail> findcaocap();
 	
 	
 }

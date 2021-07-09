@@ -30,7 +30,7 @@ public class OrderConvert {
 	public OrderDTO mapOrderEntityToDto(Order or,int tongtien) {
 		OrderDTO ordto = new OrderDTO();
 		ordto.setId(or.getId());
-		ordto.setCusdto(cusconvert.mapCustomerEntityToDto(or.getCustomer()));
+		ordto.setCusdto(cusconvert.mapCustomerclassEntityToDto(or.getCustomer()));
 		ordto.setOrderDate(or.getOrderDate());
 		ordto.setAddress(or.getAddress());
 		ordto.setStatus(or.getStatus());
@@ -41,7 +41,7 @@ public class OrderConvert {
 	public Order mapOrderDtoToEntity(OrderDTO or) {
 		Order ordto = new Order();
 		ordto.setId(or.getId());
-		ordto.setCustomer(cusconvert.mapCustomerDtoToEntity(or.getCusdto()));
+		ordto.setCustomer(cusconvert.mapCustomerclassDtoToEntity(or.getCusdto()));
 		ordto.setOrderDate(or.getOrderDate());
 		ordto.setAddress(or.getAddress());
 		ordto.setStatus(or.getStatus());

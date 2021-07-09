@@ -30,7 +30,7 @@ public class CustomerController {
 	private AccountService accountService;
 	
 	@GetMapping(value="/customer")
-	public List<Customer> getAll(){
+	public List<CustomerDTO> getAll(){
 		return customerService.findAll();
 	}
 	

@@ -5,7 +5,7 @@ import java.util.List;
 public class OrderDTO {
 
 	private int id;
-	private CustomerDTO cusdto;
+	private CustomerClassDTO cusdto;
 	private String orderDate;
 	private String address;
 	private String status;
@@ -20,7 +20,7 @@ public class OrderDTO {
 		// TODO Auto-generated constructor stub
 	}
 
-	public OrderDTO(int id, CustomerDTO cusdto, String orderDate, String address, String status, String formofpayment,
+	public OrderDTO(int id, CustomerClassDTO cusdto, String orderDate, String address, String status, String formofpayment,
 			double tongtien) {
 		super();
 		this.id = id;
@@ -40,11 +40,11 @@ public class OrderDTO {
 		this.id = id;
 	}
 
-	public CustomerDTO getCusdto() {
+	public CustomerClassDTO getCusdto() {
 		return cusdto;
 	}
 
-	public void setCusdto(CustomerDTO cusdto) {
+	public void setCusdto(CustomerClassDTO cusdto) {
 		this.cusdto = cusdto;
 	}
 

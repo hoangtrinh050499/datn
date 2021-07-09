@@ -12,14 +12,15 @@ public class CustomerConvert {
 	@Autowired
 	AccountConvert accountconvert;
 
-	public CustomerDTO mapCustomerEntityToDto(Customer cus) {
+	public CustomerDTO mapCustomerEntityToDto(Customer cus,int tongtienhang,int tongtienno) {
 		CustomerDTO cusdto = new CustomerDTO();
 		cusdto.setId(cus.getId());
 		cusdto.setName(cus.getName());
-
 		cusdto.setEmail(cus.getEmail());
 		cusdto.setPhone(cus.getPhone());
 		cusdto.setAddress(cus.getAddress());
+		cusdto.setTongtienhang(tongtienhang);
+		cusdto.setTongtienno(tongtienno);
 		return cusdto;
 	}
 	

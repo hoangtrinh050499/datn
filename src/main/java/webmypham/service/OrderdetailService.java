@@ -6,6 +6,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import Interface.dashboardTopdoanhthu;
+import Interface.dashboardTopsoluong;
+import webmypham.DTO.DoanhThuDTO;
 import webmypham.DTO.OrderDTO;
 import webmypham.DTO.OrderdetailDTO;
 import webmypham.DTO.ProductDTO;
@@ -52,6 +55,13 @@ public class OrderdetailService {
 			list.add(orConvert.mapOrderdetailEntityToDto(orderdetail));
 		}
 		return list;
+	}
+	
+	public List<dashboardTopdoanhthu> topsanphamtheosoluong(){
+		return ordetailRepository.findtopsanphamtheosoluong();
+	}
+	public List<dashboardTopdoanhthu> topsanphamtheodoangthu(){
+		return  ordetailRepository.findtopsanphamtheodoanhthu();
 	}
 	
 }
